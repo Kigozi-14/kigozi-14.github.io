@@ -3557,7 +3557,7 @@ input[type="button"].btn-block {
       -ms-flex-preferred-size: auto;
       flex-basis: auto; }
     .navbar-expand-sm .navbar-toggler {
-      display: none; } }
+      display: inline-block; } }
 
 @media (max-width: 767.98px) {
   .navbar-expand-md > .container,
@@ -3595,7 +3595,7 @@ input[type="button"].btn-block {
       -ms-flex-preferred-size: auto;
       flex-basis: auto; }
     .navbar-expand-md .navbar-toggler {
-      display: none; } }
+      display: inline-block; } }
 
 @media (max-width: 991.98px) {
   .navbar-expand-lg > .container,
@@ -3633,7 +3633,7 @@ input[type="button"].btn-block {
       -ms-flex-preferred-size: auto;
       flex-basis: auto; }
     .navbar-expand-lg .navbar-toggler {
-      display: none; } }
+      display: inline-block; } }
 
 @media (max-width: 1199.98px) {
   .navbar-expand-xl > .container,
@@ -3671,7 +3671,7 @@ input[type="button"].btn-block {
       -ms-flex-preferred-size: auto;
       flex-basis: auto; }
     .navbar-expand-xl .navbar-toggler {
-      display: none; } }
+      display: inline-block; } }
 
 .navbar-expand {
   -webkit-box-orient: horizontal;
@@ -3706,7 +3706,7 @@ input[type="button"].btn-block {
     -ms-flex-preferred-size: auto;
     flex-basis: auto; }
   .navbar-expand .navbar-toggler {
-    display: none; }
+    display: inline-block; }
 
 .navbar-light .navbar-brand {
   color: rgba(0, 0, 0, 0.9); }
