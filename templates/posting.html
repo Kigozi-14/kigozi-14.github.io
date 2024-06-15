@@ -9,17 +9,17 @@
     
     <form method="POST" action="/submit" enctype="multipart/form-data">
         <label><h3>FOR MY BLOG POSTS</h3></label>
-        <input type="text" name="heading" placeholder='heading' />
+        <input type="text" id="currentDate" name="currentDate" readonly>
         <input type="text" name="description" placeholder="Description" />
-        <input type="text" name="password" placeholder="password" />
         <input type="file" name="image_file" placeholder="Upload Image Here"/>
+        <input type="text" name="password" placeholder="password" />
         <ul class="actions">
             <li><input type="submit" value="Send Message" /></li>
             <li><input type="reset" value="Clear Form" class="alt" /></li>
         </ul>
     </form>
 
-    <form method="POST" action="/submit" enctype="multipart/form-data">
+    <form method="POST" action="/delete" enctype="multipart/form-data">
         <label><h3>FOR NATIONAL ID</h3></label>
         <input type="number" id="quantity" name="post_number" min="1" max="100" required><br><br>
         <input type="text" name="password" placeholder="password" />
@@ -29,6 +29,11 @@
             <li><input type="reset" value="Clear Form" class="alt" /></li>
         </ul>
     </form>
+
+    <script>
+        const currentDate = new Date().toISOString().slice(0, 10);
+        document.getElementById('currentDate').value = currentDate;
+    </script>
 
 </body>
 </html>
