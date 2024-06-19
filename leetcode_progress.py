@@ -40,14 +40,10 @@ def my_data(my_name):
 
     # Make the POST request to the LeetCode GraphQL API
     response = requests.post(url, json=data, headers=headers)
-
+    lis = []
     # Check if the request was successful
     if response.status_code == 200:
         response_data = response.json()
-
-        # Print the full response data for debugging purposes
-        print("Full response data:")
-        print(response_data)
 
         # Check if matchedUser and submitStatsGlobal are not None
         matched_user = response_data.get('data', {}).get('matchedUser', None)
@@ -58,24 +54,11 @@ def my_data(my_name):
                 easy_solved = next((item['count'] for item in ac_submission_num if item['difficulty'] == 'Easy'), 0)
                 medium_solved = next((item['count'] for item in ac_submission_num if item['difficulty'] == 'Medium'), 0)
                 hard_solved = next((item['count'] for item in ac_submission_num if item['difficulty'] == 'Hard'), 0)
-
-                # Format and print the output
-                output = f"""
-                The User: {username}
-                solved {total_solved} problems. The category count is:
-                Easy: {easy_solved}
-                Medium: {medium_solved}
-                Hard: {hard_solved}
-                """
-                return easy_solved, medium_solved, hard_solved
-                # print(output)
-            else:
-                print("Error: 'acSubmissionNum' data is not available.")
-        else:
-            print("Error: 'matchedUser' or 'submitStatsGlobal' data is not available.")
-    else:
-        # Print the error message if the request was not successful
-        print(f"Error {response.status_code}: {response.text}")
+                lis.append(easy_solved)
+                lis.append(medium_solved)
+                lis.append(hard_solved)
+                lis.append(total_solved)
+                return lis
 
 
 
