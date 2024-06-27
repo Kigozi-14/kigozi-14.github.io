@@ -129,13 +129,13 @@
           </div>
         </div>
         <div class="row d-flex">
-          <!-- {% for post in all_data %}
+          <!-- {% for post in posts %}
             <div class="col-md-4 d-flex ftco-animate">
-              <div class="blog-entry justify-content-end">
+              <div class="blog-entry">
                 {% if post.photo %}
-                  <img src="data:image/jpeg;base64,{{ post.photo | safe }}" alt="{{ post.description }}">
-                {% else %}
-                  <img src="/placeholder.png" alt="Image not available"> {% endif %}
+                <a class="block-20" style="background-image: url('data:image/jpeg;base64,{{ post.photo }}');">
+                </a>
+                {% endif %}
                 <div class="text mt-3 float-right d-block">
                   <div class="d-flex align-items-center mb-3 meta">
                     <p class="mb-0">
@@ -148,22 +148,23 @@
             </div>
           {% endfor %} -->
 
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a class="block-20" style="background-image: url('data:image/jpeg;base64,{{ photo }}');"></a>
-              <div class="text mt-3 float-right d-block">
-              	<div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">June 06, 2019</span>
-	                	<a class="mr-2">Admin</a>
-	                </p>
+          {% for post in posts %}
+            <div class="col-md-4 d-flex ftco-animate">
+              <div class="blog-entry justify-content-end">
+                {% if post.photo %}
+                  <a class="block-20 square-image" style="background-image: url('data:image/jpeg;base64,{{ post.photo }}');"></a>
+                {% endif %}
+                <div class="text mt-3 float-right d-block">
+                  <div class="d-flex align-items-center mb-3 meta">
+                    <p class="mb-0">
+                      <span class="mr-2">{{ post.date }}</span>
+                    </p>
+                  </div>
+                  <p>{{ post.description }}</p>
                 </div>
-                <h3 class="heading"><a >CELESTIAL</a></h3>
-                <p>The cow jumped over the moon, the little dog laughed, and the dish ran away with the spoon.</p>
               </div>
             </div>
-          </div>
-
+          {% endfor %}
 
           <!-- ddddddddddddddddddddddddddddddddddddddddd -->
         </div>

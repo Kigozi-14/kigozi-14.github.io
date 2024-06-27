@@ -56,7 +56,11 @@ def password_checking(password):
 # ROUTE FOR OUR HOME PAGE (THE LANDING)
 @app.route('/')
 def index():
-    return render_template('index.html')
+    posts = my_posts.query.all()
+    for post in posts:
+        if post.photo:
+            post.photo = base64.b64encode(post.photo).decode('utf-8')
+    return render_template('index.html', posts=posts)
 
 # ROUTE FOR OUR POSTING PAGE
 @app.route('/posting')
@@ -83,18 +87,14 @@ def submit():
             return render_template('posting.html', message='Please enter required fields....  you might have entered a wrong image file type or a wrong password')
 
 # DISPLAY IMAGE BY HITTING ITS ID
-@app.route('/display/<int:id>')
-def display_photo(id):
-    my_id = my_posts.query.get(id)
-    image_binary_data = my_id.photo
-    image_base64_data = base64.b64encode(image_binary_data).decode('ascii')
-    return render_template('index.html', photo=image_base64_data)
+# @app.route('/display/<int:id>')
+# def display_photo(id):
+#     my_id = my_posts.query.get(id)
+#     image_binary_data = my_id.photo
+#     image_base64_data = base64.b64encode(image_binary_data).decode('ascii')
+#     return render_template('index.html', photo=image_base64_data)
 
-# RETURN ALL THE DATA FROM THE POSTGRES DATA BASE
-@app.route('/all')
-def allData():
-    all_data = my_posts.query.all()
-    return render_template('index.html', all_data = all_data)
+
 
 
 if __name__ == '__main__':
