@@ -82,7 +82,7 @@ def submit():
         else:
             return render_template('posting.html', message='Please enter required fields....  you might have entered a wrong image file type or a wrong password')
 
-@app.route('/display')
+# DISPLAY IMAGE BY HITTING ITS ID
 @app.route('/display/<int:id>')
 def display_photo(id):
     my_id = my_posts.query.get(id)
@@ -90,7 +90,11 @@ def display_photo(id):
     image_base64_data = base64.b64encode(image_binary_data).decode('ascii')
     return render_template('index.html', photo=image_base64_data)
 
-
+# RETURN ALL THE DATA FROM THE POSTGRES DATA BASE
+@app.route('/all')
+def allData():
+    all_data = my_posts.query.all()
+    return render_template('index.html', all_data = all_data)
 
 
 if __name__ == '__main__':
