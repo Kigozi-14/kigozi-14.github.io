@@ -4,7 +4,8 @@
     <title>KIGOZI|ERIA</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/open-iconic-bootstrap.min.css') }}">
@@ -129,24 +130,6 @@
           </div>
         </div>
         <div class="row d-flex">
-          <!-- {% for post in posts %}
-            <div class="col-md-4 d-flex ftco-animate">
-              <div class="blog-entry">
-                {% if post.photo %}
-                <a class="block-20" style="background-image: url('data:image/jpeg;base64,{{ post.photo }}');">
-                </a>
-                {% endif %}
-                <div class="text mt-3 float-right d-block">
-                  <div class="d-flex align-items-center mb-3 meta">
-                    <p class="mb-0">
-                      <span class="mr-2">{{ post.date }}</span>
-                    </p>
-                  </div>
-                  <p>{{ post.description }}</p>
-                </div>
-              </div>
-            </div>
-          {% endfor %} -->
 
           {% for post in posts %}
             <div class="col-md-4 d-flex ftco-animate">
@@ -157,6 +140,7 @@
                 <div class="text mt-3 float-right d-block">
                   <div class="d-flex align-items-center mb-3 meta">
                     <p class="mb-0">
+                      <a>{{ post.id }}.></a>
                       <span class="mr-2">{{ post.date }}</span>
                     </p>
                   </div>
@@ -177,7 +161,7 @@
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-                <strong class="number" data-number="0">0</strong>
+                <strong class="number">{{ easy }}</strong>
                 <span>Easy</span>
               </div>
             </div>
@@ -185,7 +169,7 @@
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-                <strong class="number" data-number="0">0</strong>
+                <strong class="number">{{ medium }}</strong>
                 <span>Medium</span>
               </div>
             </div>
@@ -193,7 +177,7 @@
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-                <strong class="number" data-number="0">0</strong>
+                <strong class="number">{{ hard }}</strong>
                 <span>Hard</span>
               </div>
             </div>
@@ -201,7 +185,7 @@
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-                <strong class="number" data-number="0">0</strong>
+                <strong class="number">{{ all }}</strong>
                 <span>All</span>
               </div>
             </div>
@@ -210,12 +194,12 @@
       </div>
     </section>
 
-    <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/grey.jpg)">
+    <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(./static/images/maze.jpg)">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-7 ftco-animate text-center">
-						<h2>I'm <span>Available</span> for freelancing</h2>
-						<p>Knowing How To Code Is The Largest Interest I Have Ever Had In My Life. </p>
+						<h2>I'm <span>Available </span> for freelancing</h2>
+						<h3>Knowing How To Code Is The Largest Interest I've Ever Had In My Life. </h3>
 						<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
 					</div>
 				</div>
@@ -235,10 +219,10 @@
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
+          			<span class="icon-whatsapp"></span>
           		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Jenina Street Nansana</p>
+          		<h3 class="mb-4">Whatsapp</h3>
+	            <p><a href="https://wa.me/256755834697">+ 256-755-834-697</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -253,19 +237,19 @@
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
+          			<span class="fab fa-linkedin"></span>
           		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="nemesis@gmail.com">kigozie14@gmail.com</a></p>
+          		<h3 class="mb-4">Linkedin</h3>
+	            <p><a href="kigozi14@gmail.com">kigozie14@gmail.com</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
+          			<span class="fab fa-github"></span>
           		</div>
-          		<h3 class="mb-4">Website</h3>
-	            <p><a >kigozi-14.github.io</a></p>
+          		<h3 class="mb-4">My Github</h3>
+	            <p><a href="https://github.com/Kigozi-14?tab=repositories">kigozi-14.github.io</a></p>
 	          </div>
           </div>
         </div>
@@ -286,14 +270,14 @@
                 <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                <input type="submit" value="Send Me A Message" class="btn btn-primary py-3 px-5">
               </div>
             </form>
           
           </div>
 
           <div class="col-md-6 d-flex">
-          	<div class="img" style="background-image: url(images/pic00.jpg);"></div>
+          	<div class="img" style="background-image: url(./static/images/pic00.jpg);"></div>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request
-# from leetcode_progress import my_data
+from flask import Flask, render_template, request, redirect, url_for, flash
+from leetcode_progress import my_data
 from flask_sqlalchemy import SQLAlchemy
 import base64
 
@@ -55,12 +55,17 @@ def password_checking(password):
     
 # ROUTE FOR OUR HOME PAGE (THE LANDING)
 @app.route('/')
-def index():
+def home():
     posts = my_posts.query.all()
     for post in posts:
         if post.photo:
             post.photo = base64.b64encode(post.photo).decode('utf-8')
-    return render_template('index.html', posts=posts)
+    leet_code_data = my_data('Kigozi_Eria')
+    easy = leet_code_data[0]
+    medium = leet_code_data[1]
+    hard = leet_code_data[2]
+    all = leet_code_data[3]
+    return render_template('index.html', posts=posts, easy=easy, medium=medium, hard=hard, all=all)
 
 # ROUTE FOR OUR POSTING PAGE
 @app.route('/posting')
@@ -82,17 +87,26 @@ def submit():
             db.session.add(post_data)
             db.session.commit()
             print(my_date, image_name, my_description, my_password)
-            return render_template('index.html')
+            return redirect(url_for('home'))
         else:
             return render_template('posting.html', message='Please enter required fields....  you might have entered a wrong image file type or a wrong password')
+    return redirect(url_for('home'))
 
 # DISPLAY IMAGE BY HITTING ITS ID
-# @app.route('/display/<int:id>')
-# def display_photo(id):
-#     my_id = my_posts.query.get(id)
-#     image_binary_data = my_id.photo
-#     image_base64_data = base64.b64encode(image_binary_data).decode('ascii')
-#     return render_template('index.html', photo=image_base64_data)
+@app.route('/delete', methods=['POST'])
+def delete_photo():
+    del_id = request.form.get('to_delete')
+    to_del = my_posts.query.get(del_id)
+    if to_del is None:
+        return redirect(url_for('home'))
+    if password_checking:  # Make sure this is implemented securely
+        try:
+            db.session.delete(to_del)
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+    return redirect(url_for('home'))
+
 
 
 

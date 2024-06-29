@@ -16,7 +16,7 @@
         <input type="text" id="currentDate" name="currentDate" readonly>
         <input type="text" name="description" placeholder="Description" />
         <input type="file" name="image_file" placeholder="Upload Image Here"/>
-        <input type="password" name="password" placeholder="password" />
+        <input type="password" name="password" placeholder="password" required/>
         <ul class="actions">
             <li><input type="submit" value="Send Message" /></li>
             <li><input type="reset" value="Clear Form" class="alt" /></li>
@@ -24,10 +24,9 @@
     </form>
 
     <form method="POST" action="/delete" enctype="multipart/form-data">
-        <label><h3>FOR NATIONAL ID</h3></label>
-        <input type="number" id="quantity" name="post_number" min="1" max="100" required><br><br>
-        <input type="text" name="password" placeholder="password" />
-
+        <label><h3>FOR DELETING A POST</h3></label>
+        <input type="number" name="to_delete" placeholder="delete id" required><br><br>
+        <input type="password" name="password" placeholder="password" required/>
         <ul class="actions">
             <li><input type="submit" value="Send Message" /></li>
             <li><input type="reset" value="Clear Form" class="alt" /></li>
