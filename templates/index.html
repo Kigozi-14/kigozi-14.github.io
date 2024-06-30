@@ -52,7 +52,7 @@
           <div class="col-md-12 heading-section text-center ftco-animate">
           	<h1 class="big big-2">3ria_Kigozi</h1>
             <h2 class="mb-4">My Blog Site</h2>
-            <p>This Website Is Meant To Hold My Learning Memories.</p>
+            <h4>This Website Is Meant To Hold My Learning Memories.</h4>
           </div>
         </div>
     		<div class="row">
@@ -218,38 +218,46 @@
         <div class="row d-flex contact-info mb-5">
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-whatsapp"></span>
-          		</div>
-          		<h3 class="mb-4">Whatsapp</h3>
-	            <p><a href="https://wa.me/256755834697">+ 256-755-834-697</a></p>
+              <a href="https://wa.me/256755834697">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <span class="icon-whatsapp"></span>
+                </div>
+                <h3 class="mb-4">Whatsapp</h3>
+                <p>+ 256-755-834-697</p>
+              </a>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0755834697">+ 256-755-834-697</a></p>
+              <a href="tel://0755834697">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <span class="icon-phone2"></span>
+                </div>
+                <h3 class="mb-4">Contact Number</h3>
+                <p>+ 256-755-834-697></p>
+              </a>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="fab fa-linkedin"></span>
-          		</div>
-          		<h3 class="mb-4">Linkedin</h3>
-	            <p><a href="kigozi14@gmail.com">kigozie14@gmail.com</a></p>
+              <a href="kigozi14@gmail.com">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <span class="fab fa-linkedin"></span>
+                </div>
+                <h3 class="mb-4">Linkedin</h3>
+                <p>kigozie14@gmail.com</p>
+              </a>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="fab fa-github"></span>
-          		</div>
-          		<h3 class="mb-4">My Github</h3>
-	            <p><a href="https://github.com/Kigozi-14?tab=repositories">kigozi-14.github.io</a></p>
+              <a href="https://github.com/Kigozi-14?tab=repositories">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <span class="fab fa-github"></span>
+                </div>
+                <h3 class="mb-4">My Github</h3>
+                <p>kigozi-14.github.io</p>
+              </a>
 	          </div>
           </div>
         </div>
@@ -291,9 +299,10 @@
               <h2 class="ftco-heading-2">About</h2>
               <p>Am an aspiring selftaught software engineer. Hire me for voluntary service. Am here to contribute to your mega project.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a ><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="{{ url_for('post') }}"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a ><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="https://wa.me/256755834697"><span class="icon-whatsapp"></span></a></li>
+                <li class="ftco-animate"><a href="tel://0755834697"><span class="icon-phone2"></span></a></li>
+                <li class="ftco-animate"><a ><span class="fab fa-linkedin"></span></a></li>
+                <li class="ftco-animate"><a href="https://github.com/Kigozi-14?tab=repositories"><span class="fab fa-github"></span></a></li>
               </ul>
             </div>
           </div>
@@ -301,11 +310,9 @@
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Links</h2>
               <ul class="list-unstyled">
-                <li><a ><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
-                <li><a ><span class="icon-long-arrow-right mr-2"></span>About</a></li>
-                <li><a ><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
-                <li><a ><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
-                <li><a ><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+                <li><a href="#home-section"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+                <li><a href="#blog-section"><span class="icon-long-arrow-right mr-2"></span>My Blog</a></li>
+                <li><a href="#contact-section"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
               </ul>
             </div>
           </div>
@@ -327,8 +334,8 @@
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><span class="icon icon-map-marker"></span><span class="text">Nansana Jenina Street </span></li>
-	                <li><a ><span class="icon icon-phone"></span><span class="text">+256-755-834-697</span></a></li>
-	                <li><a ><span class="icon icon-envelope"></span><span class="text">kigozie14@gmail.com</span></a></li>
+	                <li><a href="tel://0755834697"><span class="icon icon-phone"></span><span class="text">+256-755-834-697</span></a></li>
+	                <li><a href="kigozie14@gmail.com"><span class="icon icon-envelope"></span><span class="text">kigozie14@gmail.com</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -338,7 +345,7 @@
           <div class="col-md-12 text-center">
 
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made with  <i class="icon-heart color-danger" aria-hidden="true"></i>    by <a>3ria_Kigozi</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made with  <i class="icon-heart color-danger" aria-hidden="true"></i>    by <a href="{{ url_for('post') }}">3ria_Kigozi</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>
